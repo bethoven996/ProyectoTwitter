@@ -1,0 +1,88 @@
+.ContenedorIMGyButton {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+.ContenedorPrincipalModal {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 6vw;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.btnGoogleYApple {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.Formulario {
+  width: 110%;
+}
+.Password {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Email {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Input {
+  width: 70%;
+  margin-left: 1vw;
+}
+.btnSiguiente {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.btnRecuperarPassword {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+.ContenedorIMGyButton img {
+  width: 13vw;
+  height: 11vh;
+  margin-left: 13vw;
+  margin-right: 18vw;
+}
+@media (max-width: 500px) {
+  .ContenedorPrincipalModal {
+    width: 100%;
+  }
+  .ContenedorIMGyButton img {
+    margin-left: 7rem;
+  }
+  .btnGoogleYApple {
+    margin-left: 50%;
+    margin-right: 60%;
+  }
+  .LabelO {
+    margin-left: 50%;
+    margin-right: 60%;
+  }
+  .Formulario {
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 50%;
+    margin-right: 30%;
+  }
+  .btnSiguiente {
+    margin-left: 50%;
+    margin-right: 60%;
+  }
+  .btnRecuperarPassword {
+    margin-left: 50%;
+    margin-right: 60%;
+    width: 90%;
+  }
+}

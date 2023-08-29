@@ -1,0 +1,81 @@
+.ContenedorUsers {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 60%;
+}
+.ContenedorPrincipal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.ContenedorFormulario {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 20px;
+  margin-left: 100px;
+}
+.ContenedorFormulario h2 {
+  font-weight: bold;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+}
+
+.Input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ContendorNacimiento {
+  width: 80%;
+}
+.ContendorNacimiento h5,
+p {
+  width: 60%;
+  margin-top: 15px;
+}
+.SelectorAño {
+  width: 20%;
+}
+.SelectorDia {
+  width: 20%;
+}
+.SelectorMes {
+  width: 30%;
+}
+.ContenedorSelectores {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+  .ContenedorUsers {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  .ContenedorFormulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
+  .ContendorNacimiento {
+    width: 100%;
+  }
+  .ContendorNacimiento h5,
+  p {
+    width: 80%;
+    margin-top: 15px;
+  }
+  .SelectorMes {
+    width: 40%;
+  }
+  .SelectorDia {
+    width: 25%;
+  }
+  .SelectorAño {
+    width: 30%;
+  }
+}

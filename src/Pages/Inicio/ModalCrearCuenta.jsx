@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./ModalCuenta.css";
 import { Button, TextField } from "@mui/material";
 import Select from "react-select";
+import { Link } from "react-router-dom";
 function ModalCrearCuenta() {
   const meses = [
     { label: "Enero", value: "Enero" },
@@ -136,6 +137,9 @@ function ModalCrearCuenta() {
   };
   return (
     <>
+      <Link to="/">
+        <Button>Volver Al inicio</Button>
+      </Link>
       <div className="ContenedorPrincipal">
         <div className="ContenedorPajaro">
           <img

@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./Inicio.css";
 import ModalInicioSesion from "./ModalInicioSesion";
 import { Link } from "react-router-dom";
-
+import AppleIcon from "@mui/icons-material/Apple";
+import GoogleIcon from "@mui/icons-material/Google";
 function Inicio() {
   const [show, setShow] = useState(false);
 
@@ -25,10 +26,23 @@ function Inicio() {
             <h4>Únete Hoy</h4>
           </div>
           <div className="ContenedorBtns">
-            <button>Iniciar Sesion con Google</button>
+            <button>
+              Iniciar Sesion con Google
+              <GoogleIcon
+                sx={{ marginLeft: "10px" }}
+                fontSize="medium"
+                color="primary"
+              />
+            </button>
             <button style={{ backgroundColor: "black", color: "white" }}>
               Registrarse Con Apple
+              <AppleIcon
+                sx={{ marginLeft: "15px", marginTop: "-5px" }}
+                fontSize="medium"
+                color="white"
+              />
             </button>
+
             <h5>o</h5>
             <Link to="/Login">
               <button

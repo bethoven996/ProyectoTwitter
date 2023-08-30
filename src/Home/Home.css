@@ -1,0 +1,96 @@
+.ContenedorDOM {
+  display: flex;
+  overflow-y: visible;
+}
+.ContenedorSideBar {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 20px;
+  padding-left: 5vw;
+  border: 1px solid grey;
+}
+.ContenedorIMG img {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.ContenedorIMG img:hover {
+  background-color: rgb(204, 204, 204);
+  border-radius: 25px;
+}
+.ContenedorIcons div {
+  font-family: Helvetica;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  width: 70%;
+}
+.ContenedorIcons div:hover {
+  background-color: aliceblue;
+  border-radius: 25px;
+}
+.ContenedorIcons span {
+  font-family: Arial;
+  font-size: larger;
+  padding: 3px;
+  margin-left: 8px;
+}
+.contenedorbtn button {
+  background-color: rgb(29, 161, 242);
+  width: 13vw;
+  height: 7vh;
+  border-radius: 25px;
+  font-family: Arial;
+  color: white;
+  font-size: large;
+  border: solid black 2px;
+}
+.ContenedorHome {
+  width: 40%;
+  height: 100vh;
+  border: solid 1px black;
+}
+.FotoDePerfil img {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+}
+.btntwittear {
+  background-color: rgb(29, 161, 242);
+  width: 9vw;
+  height: 5vh;
+  border-radius: 25px;
+  font-family: Arial;
+  color: white;
+  font-size: medium;
+  border: solid black 2px;
+}
+.ContenedorOpcionales {
+  display: flex;
+  justify-content: space-around;
+  font-size: medium;
+  font-family: Arial;
+  cursor: pointer;
+}
+.ContenedorOpcionales p {
+  width: 20vw;
+  padding-left: 7vw;
+  height: 7vh;
+  padding-top: 8px;
+}
+.ContenedorOpcionales p:hover {
+  background-color: rgb(211, 210, 210);
+}
+@media (max-width: 500px) {
+  .ContenedorIcons span {
+    display: none;
+  }
+  .contenedorbtn span {
+    display: none;
+  }
+  .ContenedorIcons div {
+    margin-left: 8px;
+  }
+}

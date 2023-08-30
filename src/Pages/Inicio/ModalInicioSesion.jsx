@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import "./ModalCSS.css";
 import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
+import { Link } from "react-router-dom";
 
 function ModalInicioSesion({ show, setShow, handleClose, handleShow }) {
   return (
@@ -82,9 +83,11 @@ function ModalInicioSesion({ show, setShow, handleClose, handleShow }) {
               </Col>
             </Form.Group>
           </Form>
-          <Button className="btnSiguiente" variant="dark">
-            SIGUIENTE
-          </Button>
+          <Link to="/Home">
+            <Button className="btnSiguiente" variant="dark">
+              SIGUIENTE
+            </Button>
+          </Link>
           <Button className="btnRecuperarPassword" variant="light">
             OLVISTE TU CONTRASEÑA?
           </Button>

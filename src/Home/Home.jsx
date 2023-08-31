@@ -9,7 +9,12 @@ import PersonIcon from "@mui/icons-material/Person";
 import MenuOpenOutlinedIcon from "@mui/icons-material/MenuOpenOutlined";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 import { TextFields } from "@mui/icons-material";
-
+import PublicIcon from "@mui/icons-material/Public";
+import ImageIcon from "@mui/icons-material/Image";
+import GifBoxIcon from "@mui/icons-material/GifBox";
+import AssessmentIcon from "@mui/icons-material/Assessment";
+import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
+import FmdGoodIcon from "@mui/icons-material/FmdGood";
 function Home() {
   return (
     <>
@@ -79,16 +84,52 @@ function Home() {
               <img src="https://res.cloudinary.com/do9rcgcca/image/upload/v1693429043/kpobwhwz3otsm46ut1ey.jpg" />
             </div>
             <textarea
+              className="textTarea"
               name=""
               placeholder="¿Que Esta Pasando?"
               cols="30"
               rows="5"
             ></textarea>
-            <div>
+            <div className="contenedorMundo">
+              <PublicIcon color="primary" fontSize="small" />
+              <span>cualquier persona puede responder</span>
+            </div>
+          </div>
+          <div>
+            <div className="contenedorIconosButton">
+              <ImageIcon className="iconos" fontSize="small" color="primary" />
+              <GifBoxIcon className="iconos" fontSize="small" color="primary" />
+              <AssessmentIcon
+                className="iconos"
+                fontSize="small"
+                color="primary"
+              />
+              <SentimentVerySatisfiedIcon
+                className="iconos"
+                fontSize="small"
+                color="primary"
+              />
+              <FmdGoodIcon
+                className="iconos"
+                fontSize="small"
+                color="primary"
+              />
               <button className="btntwittear">
                 <ModeEditOutlineOutlinedIcon fontSize="medium" />
                 <span>Birdear</span>
               </button>
+            </div>
+            <div className="ContenedorSubcripcion">
+              <h3>
+                Es posible que te estés perdiendo la oportunidad de acceder a
+                las cuotas de ingresos por anuncios en X.
+              </h3>
+              <span>
+                Si eres elegible, debes tener una suscripción a X Premium para
+                recibir una cuota de ingresos por anuncios.
+              </span>
+              <span>Regístrate en X Premium para obtener acceso.</span>
+              <button>Suscribite hoy</button>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@
   width: 25%;
   padding: 20px;
   padding-left: 5vw;
-  border: 1px solid grey;
+  border: 1px solid rgb(192, 192, 192);
 }
 .ContenedorIMG img {
   display: flex;
@@ -45,17 +45,18 @@
   font-family: Arial;
   color: white;
   font-size: large;
-  border: solid black 2px;
+  border: solid rgb(192, 192, 192) 2px;
 }
 .ContenedorHome {
   width: 40%;
   height: 100vh;
-  border: solid 1px black;
+  border: solid 1px grey;
 }
 .FotoDePerfil img {
   width: 40px;
   height: 40px;
   border-radius: 25px;
+  margin-left: 1vw;
 }
 .btntwittear {
   background-color: rgb(29, 161, 242);
@@ -65,7 +66,8 @@
   font-family: Arial;
   color: white;
   font-size: medium;
-  border: solid black 2px;
+  border: solid grey 2px;
+  margin-left: 10vw;
 }
 .ContenedorOpcionales {
   display: flex;
@@ -83,6 +85,53 @@
 .ContenedorOpcionales p:hover {
   background-color: rgb(211, 210, 210);
 }
+.textTarea {
+  width: 80%;
+  margin-left: 4vw;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  height: 8vh;
+}
+.contenedorMundo span {
+  color: rgb(29, 161, 242);
+}
+.contenedorMundo {
+  margin-left: 4vw;
+}
+.contenedorIconosButton {
+  cursor: pointer;
+  margin-left: 4vw;
+  display: flex;
+  flex-direction: row;
+}
+.contenedorIconosButton button {
+  margin-top: auto;
+}
+.iconos {
+  margin: 10px;
+}
+.ContenedorSubcripcion {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-top: 20px;
+  border: 1px solid rgb(192, 192, 192);
+  margin-top: 5px;
+}
+.ContenedorSubcripcion span {
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+.ContenedorSubcripcion button {
+  width: 10vw;
+  height: 7vh;
+  border-radius: 25px;
+  background-color: black;
+  color: white;
+  margin-bottom: 5px;
+}
+
 @media (max-width: 500px) {
   .ContenedorIcons span {
     display: none;

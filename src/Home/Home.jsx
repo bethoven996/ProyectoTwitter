@@ -15,6 +15,7 @@ import GifBoxIcon from "@mui/icons-material/GifBox";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
+import LinearScaleIcon from "@mui/icons-material/LinearScale";
 function Home() {
   return (
     <>
@@ -97,7 +98,13 @@ function Home() {
           </div>
           <div>
             <div className="contenedorIconosButton">
-              <ImageIcon className="iconos" fontSize="small" color="primary" />
+              <div>
+                <ImageIcon
+                  className="iconos"
+                  fontSize="small"
+                  color="primary"
+                />
+              </div>
               <GifBoxIcon className="iconos" fontSize="small" color="primary" />
               <AssessmentIcon
                 className="iconos"
@@ -130,6 +137,57 @@ function Home() {
               </span>
               <span>Regístrate en X Premium para obtener acceso.</span>
               <button>Suscribite hoy</button>
+            </div>
+          </div>
+        </div>
+        <div className="ContenedorSearch">
+          <div className="ContInput">
+            <i>
+              <SearchIcon fontSize="medium" />
+            </i>
+            <input type="text" placeholder="Buscar" />
+          </div>
+          <div className="ContTendencias">
+            <h4 className="TituloTendencias">Qué está pasando</h4>
+            <div className="Tendencia">
+              <div className="contenedorDeTendencias">
+                <span>Tendencia En Argentina</span>
+                <h6 style={{ paddingLeft: "5px" }}>San Lorenzo</h6>
+                <span>44,3 post</span>
+              </div>
+              <i>
+                <LinearScaleIcon fontSize="small" />
+              </i>
+            </div>
+            <div className="Tendencia">
+              <div className="contenedorDeTendencias">
+                <span>Tendencia En Deportes</span>
+                <h6 style={{ paddingLeft: "5px" }}>Rafael Nadal</h6>
+                <span>45,3 post</span>
+              </div>
+              <i>
+                <LinearScaleIcon fontSize="small" />
+              </i>
+            </div>
+            <div className="Tendencia">
+              <div className="contenedorDeTendencias">
+                <span>Tendencia En Musica</span>
+                <h6 style={{ paddingLeft: "5px" }}>Bon Jovi</h6>
+                <span>454,3 post</span>
+              </div>
+              <i>
+                <LinearScaleIcon fontSize="small" />
+              </i>
+            </div>
+            <div className="Tendencia">
+              <div className="contenedorDeTendencias">
+                <span>Tendencia En Cine</span>
+                <h6 style={{ paddingLeft: "5px" }}>Star Wars</h6>
+                <span>874,3 post</span>
+              </div>
+              <i>
+                <LinearScaleIcon fontSize="small" />
+              </i>
             </div>
           </div>
         </div>

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Inicio.css";
 import ModalInicioSesion from "./ModalInicioSesion";
 import { Link } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
+import { AuthContext } from "../../AuthContext";
 function Inicio() {
   const [show, setShow] = useState(false);
 

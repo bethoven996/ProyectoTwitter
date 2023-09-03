@@ -3,7 +3,20 @@ import "./ModalCuenta.css";
 import { Button, TextField } from "@mui/material";
 import Select from "react-select";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthContext";
+
 function ModalCrearCuenta() {
+  const { Contexto, Registro, login, loginWhitGoogle, logout } =
+    useContext(AuthContext);
+  const [emailRegister, setEmailRegister] = useState("");
+  const [PasswordRegister, setPasswordRegister] = useState("");
+  const [UsersRegister, setUserRegister] = useState("");
+  console.log(emailRegister, PasswordRegister, UsersRegister);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    Registro(emailRegister, PasswordRegister);
+  };
   const meses = [
     { label: "Enero", value: "Enero" },
     { label: "Febrero", value: "Febrero" },
@@ -157,6 +170,7 @@ function ModalCrearCuenta() {
                 id="outlined-basic"
                 label="Nombre De usuario"
                 variant="outlined"
+                onChange={(e) => setUserRegister(e.target.value)}
               />
               <TextField
                 sx={{ marginTop: "20px" }}
@@ -164,6 +178,7 @@ function ModalCrearCuenta() {
                 label="Correo Electronico"
                 variant="outlined"
                 type="email"
+                onChange={(e) => setEmailRegister(e.target.value)}
               />
               <TextField
                 sx={{ marginTop: "20px" }}
@@ -171,14 +186,15 @@ function ModalCrearCuenta() {
                 label="Contraseña"
                 variant="outlined"
                 type="password"
+                onChange={(e) => setPasswordRegister(e.target.value)}
               />
-              <TextField
+              {/* <TextField
                 sx={{ marginTop: "20px" }}
                 className="Input"
                 label="Repetir Contraseña"
                 variant="outlined"
                 type="password"
-              />
+              /> */}
             </div>
             <div className="ContendorNacimiento">
               <h5>Fecha de nacimiento</h5>
@@ -206,8 +222,10 @@ function ModalCrearCuenta() {
               </div>
             </div>
             <Button
+              type="submit"
               sx={{ width: "180px", marginTop: "5vh" }}
               variant="contained"
+              onClick={handleRegister}
             >
               Crear Cuenta
             </Button>

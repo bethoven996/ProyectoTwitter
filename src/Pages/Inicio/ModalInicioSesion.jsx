@@ -8,8 +8,28 @@ import "./ModalCSS.css";
 import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../../AuthContext";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function ModalInicioSesion({ show, setShow, handleClose, handleShow }) {
+  const auth = useAuth();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await auth.login(email, password);
+
+      navigate("/Home");
+    } catch (error) {
+      alert("Usuario o contraseña incorrectos");
+    }
+  };
+  const InicioGoogle = (e) => {
+    e.preventDefault();
+    auth.loginWhitGoogle();
+  };
   return (
     <>
       <Modal
@@ -39,7 +59,11 @@ function ModalInicioSesion({ show, setShow, handleClose, handleShow }) {
         </div>
         <h3 className="span">Inicia Sesion en Bird</h3>
         <div className="ContenedorPrincipalModal">
-          <Button className="btnGoogleYApple" variant="primary">
+          <Button
+            className="btnGoogleYApple"
+            onClick={InicioGoogle}
+            variant="primary"
+          >
             Iniciar Con Google
             <GoogleIcon
               sx={{ marginLeft: "10px" }}
@@ -66,7 +90,11 @@ function ModalInicioSesion({ show, setShow, handleClose, handleShow }) {
                 Email
               </Form.Label>
               <Col className="Input" sm="10">
-                <Form.Control type="email" placeholder="Email" />
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </Col>
             </Form.Group>
 
@@ -79,15 +107,19 @@ function ModalInicioSesion({ show, setShow, handleClose, handleShow }) {
                 Password
               </Form.Label>
               <Col className="Input" sm="10">
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </Col>
             </Form.Group>
           </Form>
-          <Link to="/Home">
-            <Button className="btnSiguiente" variant="dark">
-              SIGUIENTE
-            </Button>
-          </Link>
+          {/* <Link to="/Home"> */}
+          <Button onClick={handleLogin} className="btnSiguiente" variant="dark">
+            SIGUIENTE
+          </Button>
+          {/* </Link> */}
           <Button className="btnRecuperarPassword" variant="light">
             OLVISTE TU CONTRASEÑA?
           </Button>

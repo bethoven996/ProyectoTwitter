@@ -5,18 +5,21 @@ import Select from "react-select";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthContext";
-
+import { useAuth } from "../../AuthContext";
 function ModalCrearCuenta() {
-  const { Contexto, Registro, login, loginWhitGoogle, logout } =
-    useContext(AuthContext);
+  const auth = useAuth();
+
   const [emailRegister, setEmailRegister] = useState("");
   const [PasswordRegister, setPasswordRegister] = useState("");
   const [UsersRegister, setUserRegister] = useState("");
-  console.log(emailRegister, PasswordRegister, UsersRegister);
-  const handleRegister = (e) => {
-    e.preventDefault();
-    Registro(emailRegister, PasswordRegister);
+  const { displayName } = auth.usuario;
+
+  const handleRegister = (evento) => {
+    evento.preventDefault();
+    auth.Registro(emailRegister, PasswordRegister);
   };
+
+  console.log(displayName);
   const meses = [
     { label: "Enero", value: "Enero" },
     { label: "Febrero", value: "Febrero" },
@@ -148,6 +151,7 @@ function ModalCrearCuenta() {
   const HandleChangeSelect = (evento) => {
     console.log(evento);
   };
+
   return (
     <>
       <Link to="/">
@@ -188,13 +192,6 @@ function ModalCrearCuenta() {
                 type="password"
                 onChange={(e) => setPasswordRegister(e.target.value)}
               />
-              {/* <TextField
-                sx={{ marginTop: "20px" }}
-                className="Input"
-                label="Repetir Contraseña"
-                variant="outlined"
-                type="password"
-              /> */}
             </div>
             <div className="ContendorNacimiento">
               <h5>Fecha de nacimiento</h5>

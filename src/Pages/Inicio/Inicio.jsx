@@ -4,13 +4,17 @@ import ModalInicioSesion from "./ModalInicioSesion";
 import { Link } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import GoogleIcon from "@mui/icons-material/Google";
-import { AuthContext } from "../../AuthContext";
+import { useAuth } from "../../AuthContext";
 function Inicio() {
   const [show, setShow] = useState(false);
-
+  const auth = useAuth();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const InicioGoogle = (e) => {
+    e.preventDefault();
+    auth.loginWhitGoogle();
+  };
   return (
     <>
       <div className="ContenedorPrincipal">
@@ -27,7 +31,7 @@ function Inicio() {
             <h4>Únete Hoy</h4>
           </div>
           <div className="ContenedorBtns">
-            <button>
+            <button onClick={InicioGoogle}>
               Iniciar Sesion con Google
               <GoogleIcon
                 sx={{ marginLeft: "10px" }}

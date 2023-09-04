@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -6,8 +6,19 @@ import {
   signOut,
   signInWithPopup,
   getAuth,
+  onAuthStateChanged,
 } from "firebase/auth";
+import { usuariosDatos } from "./FireBase";
+
 export const AuthContext = createContext();
+const auth = getAuth();
+export const useAuth = () => {
+  const contexto = useContext(AuthContext);
+  if (!contexto) {
+    console.log("Error");
+  }
+  return contexto;
+};
 function AutenticacionUsuarios({ children }) {
   const Contexto = useContext(AuthContext);
   if (!Contexto) {
@@ -23,6 +34,19 @@ function AutenticacionUsuarios({ children }) {
     );
     console.log(registrado);
   };
+
+  const [usuario, setUsuario] = useState("");
+  useEffect(() => {
+    const suscribido = onAuthStateChanged(auth, (currentUser) => {
+      if (!currentUser) {
+        console.log("no se encontro ese usuario");
+        setUsuario("");
+      } else {
+        setUsuario(currentUser);
+      }
+    });
+    return () => suscribido();
+  }, []);
   const login = async (email, password) => {
     const logeado = await signInWithEmailAndPassword(auth, email, password);
     console.log(logeado);
@@ -41,6 +65,7 @@ function AutenticacionUsuarios({ children }) {
     login,
     loginWhitGoogle,
     logout,
+    usuario,
   };
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 }

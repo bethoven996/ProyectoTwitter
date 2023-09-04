@@ -202,6 +202,13 @@
 .contenedorDeTendencias {
   width: 50%;
 }
+.FotoDePerfil {
+  display: flex;
+  flex-direction: row;
+}
+.FotoDePerfil h6 {
+  margin-left: 20px;
+}
 @media (max-width: 500px) {
   .ContenedorIcons span {
     display: none;

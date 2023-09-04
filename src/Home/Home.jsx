@@ -8,7 +8,6 @@ import BugReportIcon from "@mui/icons-material/BugReport";
 import PersonIcon from "@mui/icons-material/Person";
 import MenuOpenOutlinedIcon from "@mui/icons-material/MenuOpenOutlined";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
-import { TextFields } from "@mui/icons-material";
 import PublicIcon from "@mui/icons-material/Public";
 import ImageIcon from "@mui/icons-material/Image";
 import GifBoxIcon from "@mui/icons-material/GifBox";
@@ -16,7 +15,26 @@ import AssessmentIcon from "@mui/icons-material/Assessment";
 import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import LinearScaleIcon from "@mui/icons-material/LinearScale";
+import { useAuth } from "../AuthContext";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 function Home() {
+  const navigate = useNavigate();
+  const auth = useAuth();
+  const { displayName } = auth.usuario;
+  const [mensajes, setMensajes] = useState([]);
+  const [posteo, setPosteo] = useState("");
+  const Posteados = () => {
+    if (posteo.trim() !== "") {
+      setMensajes([...mensajes, posteo]);
+      setPosteo("");
+    }
+  };
+  const handleLogout = () => {
+    auth.logout();
+    navigate("/");
+  };
   return (
     <>
       <div className="ContenedorDOM">
@@ -67,6 +85,7 @@ function Home() {
               <span>Birdear</span>
             </button>
           </div>
+          <Button onClick={() => handleLogout()}>Cerrar Sesion</Button>
         </div>
         <div className="ContenedorHome">
           <div>
@@ -83,6 +102,7 @@ function Home() {
           <div className="ContenedorTextTarea">
             <div className="FotoDePerfil">
               <img src="https://res.cloudinary.com/do9rcgcca/image/upload/v1693429043/kpobwhwz3otsm46ut1ey.jpg" />
+              <h6>{displayName}</h6>
             </div>
             <textarea
               className="textTarea"
@@ -90,6 +110,7 @@ function Home() {
               placeholder="¿Que Esta Pasando?"
               cols="30"
               rows="5"
+              onChange={(e) => setPosteo(e.target.value)}
             ></textarea>
             <div className="contenedorMundo">
               <PublicIcon color="primary" fontSize="small" />
@@ -121,7 +142,7 @@ function Home() {
                 fontSize="small"
                 color="primary"
               />
-              <button className="btntwittear">
+              <button onClick={() => Posteados()} className="btntwittear">
                 <ModeEditOutlineOutlinedIcon fontSize="medium" />
                 <span>Birdear</span>
               </button>
@@ -137,6 +158,13 @@ function Home() {
               </span>
               <span>Regístrate en X Premium para obtener acceso.</span>
               <button>Suscribite hoy</button>
+            </div>
+            <div className="MensajesContainer">
+              {mensajes.map((mensaje, index) => (
+                <div key={index} className="Mensaje">
+                  {mensaje}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -17,6 +17,7 @@ function ModalCrearCuenta() {
   const handleRegister = (evento) => {
     evento.preventDefault();
     auth.Registro(emailRegister, PasswordRegister);
+    alert("CUENTA CREADA");
   };
 
   console.log(displayName);

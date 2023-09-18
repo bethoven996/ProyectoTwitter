@@ -14,7 +14,7 @@ function Inicio() {
   const InicioGoogle = (e) => {
     e.preventDefault();
     auth.loginWhitGoogle();
-    alert("CUENTA CREADA");
+   
   };
   return (
     <>
